@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>SRI AMBAL BANKERS</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header>
+    <!-- place navbar here -->
+
+  </header>
+  <main>
+
+    <h1 style="color: #4CAF50;"><center> Login Form</center></h1>
+{% include 'app/inc/message.html' %}
+<div>
+<form method="post" autocomplete='off'>
+{% csrf_token %}
+      <label for="first">
+            Email:
+        </label>
+      <input type="text"
+             id="first"
+             name="username"
+             placeholder="Enter your username" required>
+
+      <label for="password">
+            Password:
+        </label>
+      <input type="password"
+             id="password"
+             name="password"
+             placeholder="Enter your Password" required>
+
+      <div class="wrap">
+          <button type="submit">
+                
+              Submit
+          </button>
+</form>
+</div>
+
+    
+ 
+{% comment %}  
+    <form action="">
+      <label for="first">
+            Email:
+        </label>
+      <input type="email"
+             id="first"
+             name="first"
+             placeholder="Enter your Email Id" required>
+
+      <label for="password">
+            Password:
+        </label>
+      <input type="password"
+             id="password"
+             name="password"
+             placeholder="Enter your Password" required>
+
+      <div class="wrap">
+          <button type="submit">
+                
+              Submit
+          </button>
+      </div>
+</form>  {% endcomment %}
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    background: #f3f3f3;
+    flex-direction: column;
+    margin: 0;
+}
+ 
+.main {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    transition: transform 0.2s;
+    width: 500px;
+    text-align: center;
+}
+ 
+h1 {
+    color: #4CAF50;
+}
+ 
+label {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #555;
+    font-weight: bold;
+}
+ 
+ 
+input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+ 
+button {
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: #4CAF50;
+    width: 100%;
+    font-size: 16px;
+}
+ 
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+</style>
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

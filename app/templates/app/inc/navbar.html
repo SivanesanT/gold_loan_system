@@ -1,0 +1,84 @@
+    <header>
+      <!-- "background-color: #e3f2fd;" -->
+      <!-- navbar starts -->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top " style="background-color:#fdec2a;">
+        <!-- background-color:#e3f2fd; -->
+          <div class="container">
+            <a class="navbar-brand " style="font-family: 'Noticia Text', serif;" href = {% url 'home' %}>
+              <!-- <span class="material-symbols-outlined">
+              diamond
+              </span> -->
+              SRI AMBAL BANKERS  PUDUKKOTTAI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="material-symbols-outlined">
+                      collections_bookmark
+                      </span> Books
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="adminaddbooks.html"><span class="material-symbols-outlined">
+                      new_label
+                      </span>Add Books</a></li>
+                    <li><a class="dropdown-item" href="admintransferbookview.html"><span class="material-symbols-outlined">
+                      masked_transitions
+                      </span>Transfered Books</a></li>
+                      <li><a class="dropdown-item" href="adminbooktrack.html"><span class="material-symbols-outlined">
+                        location_searching
+                        </span>Book Tracking</a></li>
+                  </ul>
+                </li> -->
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'newregister' %}"><span class="material-symbols-outlined">
+                    add_circle
+                    </span>New Registeration</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'newfeatch' %}"><span class="material-symbols-outlined">
+                    add_card
+                    </span>Fletches</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'relese1' %}"><span class="material-symbols-outlined">
+                    new_releases
+                    </span>Release</a>
+                </li>
+                <!-- ----transfer---- -->
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="adminreturnbook.html"><span class="material-symbols-outlined">
+                    share_windows
+                    </span>Transfer</a>
+                </li> -->
+              </ul>
+        <ul class="navbar-nav navbar-right">
+          <li class="nav-item">
+
+
+
+<form id="logout-form" method="POST" action="{% url 'logout' %}" style="display: none;">
+    {% csrf_token %}
+
+
+<a class="nav-link" href="#" onclick="document.getElementById('logout-form').submit();"><span class="material-symbols-outlined">
+                  logout
+                  </span>Logout</a>
+
+</form>
+
+              {% comment %} <a class="nav-link" href="{% url 'logout' %}"><span class="material-symbols-outlined">
+                  logout
+                  </span>Logout</a> {% endcomment %}
+          </li>
+       
+          </li>
+        </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- navbar ends -->
+      <!-- place navbar here -->
+    </header>

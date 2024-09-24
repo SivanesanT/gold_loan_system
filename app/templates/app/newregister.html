@@ -1,0 +1,68 @@
+{% extends 'app/layouts/main.html' %}
+
+{% block main %}
+<br><br><br>
+<div class="container">
+    <!-- <center><h2 style="color:red;"> {{ msg }} </h2></center> -->
+    <h3>New Registeration</h3>
+    <br>
+    {% include 'app/inc/message.html' %}
+
+<hr>
+<div class="container">
+<form action=" {% url 'regi' %}" method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+    <div class="container">
+
+    <div class="form-group">
+      <label for="bookname">Customer Name:</label>
+      <input type="text" name="name" class="form-control" id="email" required>
+    </div>
+<br>
+    <div class="form-group">
+      <label for="aurthor">Customer Father Name:</label>
+      <input type="text" name="fname" class="form-control" id="pwd" required>
+    </div>
+<br>
+    <div class="form-group">
+        <label for="aurthor">Customer Aadhar Number:</label>
+        <input  type="tel" minlength="12" maxlength="12"  name="aadhar" class="form-control" id="pwd" required>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="aurthor">Customer Mobile Number:</label>
+        <input  type="tel" minlength="10" maxlength="10"  name="number" class="form-control" id="pwd" required>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="aurthor">Customer Adress:</label>
+        <input  type="text" name="adress" class="form-control" id="pwd" required>
+    </div>
+    <br>
+    <!-- <div class="form-group">
+        <label for="aurthor">Customer Adress:</label>
+        <input  type="text" name="adress" class="form-control" id="pwd" required>
+    </div>
+    <br> -->
+
+    <div class="form-group">
+        <label for="aurthor">Customer image:</label>
+        <input type="file" name="photo" id="" required>
+        <!-- <input type="file" accept="image/*" capture="user"> -->
+    </div>
+    
+     
+   <center> <button name="submit" type="submit" style="text-align: center;" class="btn btn-primary" onclick="return confirm('Are you sure you want to Send a OTP');">Send OTP</button></center>
+
+<br><br><br>
+
+
+</div>
+    </form>
+
+</div>
+
+</div>
+
+
+{% endblock main %}

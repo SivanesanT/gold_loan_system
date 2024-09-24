@@ -1,0 +1,102 @@
+{% extends 'app/layouts/main.html' %}
+
+{% block main %}
+<br><br><br>
+<div class="container">
+    <!-- <center><h2 style="color:red;"> {{ msg }} </h2></center> -->
+    <h3>New Featch</h3>
+  
+    {% include 'app/inc/message.html' %}
+<hr>
+{% if data %}
+<div class="container">
+    <center style="color: chartreuse;" ><b> <u>CUSTOMER DETAILS</u> </b></center>
+    
+    <div class="row">
+        
+      <div class="col lg 4">
+  <img src="{{data.userimg.url}}" alt="customer image" height="120px" width="150px" class="rounded-circle animate__animated animate__bounceInLeft animate__faster ">
+      </div>
+  <div class="col lg 4">
+    <br>
+    <img src="" alt="">
+    <label for=""><b>NAME :</b> {{data.name}}  {{data.fname}}</label>
+    <br>
+    <label for=""><b>AADHAR NUMBER:</b>{{data.aadhar}}</label>
+    <br>
+    <label for=""><b>MOBILE NUMBER:</b>{{data.contact}}</label>
+</div>
+<div class="col-lg-4">
+<br><br>
+<label for=""><b>ADDRESS:</b>{{data.adress}}</label>
+<br>
+
+<a style=" text-decoration: none ; padding:5px; border-radius: 5%; background-color:yellow; color:aqua; :hover {background-color:yellowgreen}  " href="{% url 'custview' pk=data.id %}">View Alredy Featch Items</a>
+</div>
+
+</div>
+</div>
+<!-- {{data.name}}{{data.id}} 
+<img src="{{data.userimg.url}}" alt="img"> -->
+<br>
+
+<hr>
+<div class="container">
+    <!-- pk=data.id -->
+<form action=" {% url 'fetch'  %}" method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+    <div class="container">
+        <input  type="hidden"   name="userid" value="{{data.id}}" class="form-control" id="pwd">
+        {% endif %}
+        <div class="form-group">
+      <label for="bookname">அசல் தொகை:</label>
+      <input type="number" name="princ" class="form-control" id="email" required>
+    </div>
+<br>
+    <div class="form-group">
+      <label for="aurthor">வட்டி விகிதம் ( % ) :</label>
+      <input type="text" name="rat_int" class="form-control" id="pwd" required>
+    </div>
+<br>
+    <div class="form-group">
+        <label for="aurthor">அடகு பொருளின் எடை:</label>
+        <input  type="text"   name="gm" class="form-control" id="pwd" required>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="aurthor">அடகு பொருளின் விபரம்:</label>
+        <input  type="text"   name="pro_detail" class="form-control" id="pwd" required>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="aurthor">அடகு பொருளின் மதிப்பு தொகை:</label>
+        <input  type="number" name="tot_rate" class="form-control" id="pwd" required>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="aurthor">பொருளை மீட்பதர்க்கு ஒப்புக்கொண்ட தேதி:</label>
+        <input  type="date" name="re_date" class="form-control" id="pwd" required>
+    </div>
+    <br>
+
+    <div class="form-group">
+        <label for="aurthor">அடகு நகையின் புகைபடம் :</label>
+        <input type="file" name="photo" id="" required>
+        <!-- <input type="file" accept="image/*" capture="user"> -->
+    </div>
+    
+     
+   <center> <button name="submit" type="submit" style="text-align: center;" class="btn btn-primary" onclick="return confirm('Are you sure you want to Featch a Product');">Featch a Product</button></center>
+
+<br><br><br>
+
+
+</div>
+    </form>
+
+</div>
+
+</div>
+
+
+{% endblock main %}

@@ -1,0 +1,29 @@
+{% extends 'app/layouts/main.html' %}
+
+{% block main %}
+<br><br><br>
+<div class="container">
+    <!-- <center><h2 style="color:red;"> {{ msg }} </h2></center> -->
+    <h3>New Registeration Verification</h3>
+    <br>
+    {% include 'app/inc/message.html' %}
+    <br>
+    <hr>
+    <br>
+    <div class="container">
+    <form action="{% url 'otpverify' %} " method="post">
+        
+        {% csrf_token %}
+        <div class="form-group">
+        <label for="aurthor">One Time Password(OTP):</label>
+        <!-- {{number}} -->
+        <input type="hidden" name="number" value="{{ number }}" >
+        <input  type="text"  name="otp" placeholder="Enter the OTP" class="form-control" id="pwd">
+    </div>
+    <br>
+  <center>  <button name="submit"  type="submit" style="text-align: center;" class="btn btn-success" onclick="return confirm('Are you sure you want to Register?');"> Register</button>
+  </center>
+</form>
+</div>
+  <br><br><br><br><br><br><br><br><br><br>
+  {% endblock main%}

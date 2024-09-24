@@ -1,0 +1,116 @@
+{% extends 'app/layouts/main.html' %}
+
+{% block main %}
+<br><br><br>
+<div class="container">
+{% if cust %}
+<h1>Details About {{cust.name}}{{cust.fname}}</h1>
+<hr>
+
+
+<div class="row">  
+
+    <div class="col lg 4">
+<img src="{{cust.userimg.url}}" alt="customer image" height="120px" width="150px" class="rounded-circle animate__animated animate__bounceInLeft animate__faster ">
+    </div>
+<div class="col lg 4">
+  <br>
+  <img src="" alt="">
+  <label for=""><b>NAME :</b> {{cust.name}}  {{cust.fname}}</label>
+  <br>
+  <label for=""><b>AADHAR NUMBER:</b>{{cust.aadhar}}</label>
+  <br>
+  <label for=""><b>MOBILE NUMBER:</b>{{cust.contact}}</label>
+</div>
+<div class="col-lg-4">
+<br><br>
+<label for=""><b>ADDRESS:</b>{{cust.adress}}</label>
+<br>
+{% if totcot %}
+<label for=""><b>Total Number of Fetches:</b>{{totcot}}</label>
+<br><br>
+{% endif %}
+<a style=" text-decoration: none ; padding:5px; border-radius: 5%; background-color:brown; color:white; :hover {background-color:yellowgreen}  " href="{% url 'featchpage' pk=cust.id %}"><span class="material-symbols-outlined">
+    add_card
+    </span>New fetch </a>
+</div>
+
+</div>
+<br>
+<hr>
+
+{% if prod%}
+<h3 style="color: green;"><u>Featches...</u></h3>
+<br>
+
+{% for i in prod%}
+{% if i.released %}
+<div class="container" style="background-color: rgba(119, 255, 119, 0.851); color:rgba(45, 43, 43, 0.709); width: 1100px; height: 125px; border-radius: 25px; padding: 15px; margin: 20px; ">
+    <div class="row">
+        <div class="col md 6">
+            <label for=""><b>Fetch Date :</b> {{i.fleatchdate}}</label><br>
+            <label for=""><b>Product Item's:</b> {{i.productdetail}}</label><br>
+            <label for=""><b>Principal Amount :</b> {{i.principal}}</label><br>
+        </div>
+        <div class="col md 3">
+<!-- <div class="row">
+    <div class="col md 6"> -->
+        <label for=""><b>Grams :</b> {{i.gm}}</label><br>
+        <label for=""><b>Rate of Intrest :</b>{{i.rate}}%</label><br>
+        <label for=""><b>Released Date :</b> {{i.releasedate}}</label><br>
+        <label for=""><b>Payed Intrest :</b> {{i.intrest}}</label><br>
+
+ </div>
+    <div class="col md 3">
+            <img src="{{i.productimg.url}}" alt="product img" height="100px" width="130px" class="rounded-sqare animate__animated animate__bounceInLeft animate__faster ">
+</div>
+</div>
+    <!-- </div> -->
+</div>
+{% else %}
+
+<div class="container" style="background-color: rgb(199, 213, 226); width: 1100px; height: 125px; border-radius: 25px; padding: 15px; margin: 20px; ">
+    <div class="row">
+        <div class="col md 6">
+            <label for=""><b>Fetch Date :</b> {{i.fleatchdate}}</label><br>
+            <label for=""><b>Product Item's:</b> {{i.productdetail}}</label><br>
+            <label for=""><b>Principal Amount :</b> {{i.principal}}</label><br>
+        </div>
+        <div class="col md 2">
+
+            <label for=""><b>Grams :</b> {{i.gm}}</label><br>
+            <label for=""><b>Rate of Intrest :</b>{{i.rate}}%</label><br>
+            <label for=""><b>Return Due Date :</b> {{i.returndue}}</label><br>
+            <label for=""><b>Intrest by today:</b>{{i.balint | stringformat:'d'}}</label><br>
+
+        </div>
+        <div class="col-md-2">
+            <img src="{{i.productimg.url}}" alt="product img" height="100px" width="130px" class="rounded-sqare animate__animated animate__bounceInLeft animate__faster ">
+
+        </div>
+        {% if not i.transfer %}
+        <div class="col-md-2">
+            <!-- ----transfer---- -->
+            <!-- <a class="btn btn-outline-warning" style="color: #000;" href="#">Transfer</a><br> --><br>
+            <a class="btn btn-outline-primary" href="{% url 'relese2' im=i.id %}">Release</a>
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endif %}
+{% endfor %}
+
+{% else %}
+<h1 style="color:red">--Non of the fetches are Available for this user--</h1>
+<br><br><br>
+{% endif %}
+{% endif %}
+</div>
+{% endblock %}
+
+
+
+
+

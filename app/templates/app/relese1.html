@@ -1,0 +1,32 @@
+{% extends 'app/layouts/main.html' %}
+
+{% block main %}
+<br><br><br><br>
+<div class="container">
+    <!-- <center><h2 style="color:red;"> {{ msg }} </h2></center> -->
+    <h3>Release a Fleatch</h3>
+    <br>
+    {% include 'app/inc/message.html' %}
+
+<hr>
+<div class="container">
+    
+<form action="" method="post" >
+    {% csrf_token %}
+    <div class="container">
+<br>
+   
+    <div class="form-group">
+      <label for="">Fleatch ID:</label>
+      <input type="text" name="proid" class="form-control" id="pwd" required>
+    </div>
+<br><br>
+<center> <button name="submit" type="submit" style="text-align: center;" class="btn btn-primary" onclick="return confirm('Are you sure you want to Release this Item');">Submit</button></center>
+</div>
+</form>
+</div>
+</div>
+
+<br><br><br><br><br>
+<br><br><br><br>
+{% endblock %}

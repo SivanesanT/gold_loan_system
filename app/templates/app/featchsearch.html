@@ -1,0 +1,62 @@
+{% extends 'app/layouts/main.html' %}
+
+{% block main %}
+<br><br><br>
+<div class="container">
+<h1>Featch the Golds</h1>
+<div class="row">
+    <form action="{% url 'featchsearch' %}"  method="post">
+        {% csrf_token %}
+    <div class="col-xs-8 col-xs-offset-2">
+    <div class="input-group">
+     
+    <input type="number" class="form-control" name="num" placeholder="Search a User by a mobile Number" required >
+    <span class="input-group-btn">
+    <button class="btn btn-primary" name="submit" type="submit"> Search</button>
+    </span> 
+
+    </div>
+    </div>
+</form>
+    </div>
+<br><br>
+<h2 style="color:Brown;"><span class="material-symbols-outlined">
+    crowdsource
+    </span>Total Customer's in Our Shop</h2><hr>
+    {% include 'app/inc/message.html' %}
+    <br>
+  <table class="table  table-info table-hover ">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col">Aadhar Number</th>
+        <th scope="col">Mobile Number</th>
+        <th scope="col">Featch a Member</th>
+      </tr>
+    </thead>
+    <tbody  class="table-group-divider">
+        {% if data %}
+        {% for  i in data %}
+
+     <tr>
+        <th scope="row"></th>
+        <td>{{i.name}} {{i.fname}}</td>  
+        <td>{{i.aadhar }}</td>
+        <td>{{i.contact }}</td>
+      <td><a style="text-decoration: none; padding:5px; border-radius: 5%; background-color:green; color:white; " href="{% url 'featchpage' pk=i.id %}">Featch</a></td>
+  
+      </tr> 
+   
+      {% endfor %}
+      {% endif %}
+
+
+    </tbody>
+  </table>
+
+</div>
+
+
+
+{% endblock main %}

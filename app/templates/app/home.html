@@ -1,0 +1,117 @@
+
+{% extends 'app/layouts/main.html' %}
+
+{% block main %}
+
+<br><br><br>
+<div class="container">
+  {% include 'app/inc/message.html' %}
+
+  <div class="row">    
+
+    <div class="col-sm-6 box-gold"><marquee behavior="" direction="">
+      {% if gold %}
+      <h3>Today Gold Rate : {{gold | stringformat:'d'}}</h3>
+      {% endif %}
+    </marquee>
+      
+    </div>
+    <div class="col-sm-6 box-silver"><marquee behavior="" direction="">
+      {% if silver %}
+      <h3>Today Silver Rate : {{silver | stringformat:'d'}}</h3>
+      {% endif %}
+    </marquee>
+    </div>
+  </div>
+<div class="row">    
+{% if user %}
+    <div class="col-sm-4 box-orange">
+      <h3>Total No. users in our shop: {{user}}</h3>
+    </div>
+{% endif %}
+{% if fetch %}
+    <div class="col-sm-4 box-pink">
+      <h3>Total No. of Fetches: {{fetch}}</h3>
+    </div>
+    {% endif %}
+    <div class="col-sm-4 box-green">
+      <h3>Total No. Fetches Not release until 1 Year:</h3>
+    </div>
+
+{% if ntrans %}
+    <div class="col-sm-4 box-yellow">
+      <h3>Total No. Fetches in Our hand: {{ntrans}}</h3>
+    </div>
+{% endif %}
+{% if trans %}
+    <div class="col-sm-4 box-red">
+      <h3>Total No. Fetches in Transfer: {{ trans }}</h3>
+    </div>
+{% endif %}
+{% if tot %}
+    <div class="col-sm-4 box-white">
+      <h3>Total No. amount is given: {{tot.principal__sum}}</h3>
+    </div>
+    {% endif %}
+<!-- first completed -->
+</div>
+<hr>
+<br>
+<div class="row">
+  <form action="" method="post">
+    {% csrf_token %}
+  <div class="col-xs-8 col-xs-offset-2">
+  <div class="input-group">
+  <input type="text" class="form-control" name="x" placeholder="Search a User by a mobile Number">
+  <span class="input-group-btn">
+  <button class="btn btn-primary" name="submit" type="submit"> Search</button>
+  </span>
+  </div>
+  </div>
+</form>
+  </div>
+  <br>
+   <h2 style="color:rgb(252, 8, 232);"><span class="material-symbols-outlined">
+    crowdsource
+    </span>Total Customer's in Our Shop</h2>
+    <br>
+<!--   
+  {% if last %}
+  {% for i in last %}
+  <h1>  {{ i.name }}{{i.fname}} </h1>
+  <br>
+  {% endfor %}
+  {% endif %}
+  <br><br> -->
+  <table class="table  table-info table-hover ">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col">Aadhar Number</th>
+        <th scope="col">Mobile Number</th>
+        <th scope="col">Customer's Detail</th>
+      </tr>
+    </thead>
+    <tbody  class="table-group-divider">
+        {% if last %}
+        {% for  i in last %}
+        <tr>
+       
+        <th scope="row"></th>
+        <td>{{i.name}} {{i.fname}}</td>
+        <td>{{i.aadhar }}</td>
+        <td>{{i.contact }}</td>
+        <td><a style="text-decoration: none; padding:5px; border-radius: 5%; background-color:green; color:white; " href="{% url 'custview' pk=i.id %}">view</a></td>
+      </tr> 
+    
+      {% endfor %}
+      {% endif %}
+
+
+    </tbody>
+  </table>
+
+  </div>
+
+{% endblock main %}

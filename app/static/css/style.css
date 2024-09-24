@@ -1,0 +1,93 @@
+.box-gold{  
+    padding: 20px;
+    border-radius: 10px;
+    height: 100px;
+    width: 500px;
+    text-align: center;
+    /* background: linear-gradient(to bottom right,#955087, #5278ca ); */
+    background: goldenrod;
+    margin:2em;
+}
+.box-silver{  
+    padding: 20px;
+    border-radius: 10px;
+    height: 100px;
+    width: 500px;
+    /* background: linear-gradient(to bottom right,#955087, #5278ca ); */
+    background: silver;
+    margin:2em;
+}
+
+.box-orange{
+    /* height: 220px;
+    width:200px;
+    border-radius: 15px;
+    background: linear-gradient(#EF3B36,#FFFFFF); */
+    padding: 20px;
+    border-radius: 15px;
+    height: 150px;
+    width: 300px;
+    background: linear-gradient(to bottom right,#fc4a1a, #f7b733 );
+    margin:2em;
+    text-align: center;
+    color: white;
+}
+.box-pink{  
+    padding: 20px;
+    border-radius: 15px;
+    height: 150px;
+    width: 300px;
+    background: linear-gradient(to bottom right,#955087, #5278ca );
+    margin:2em;
+    color: white;
+}
+.box-green{  
+    padding: 20px;
+    border-radius: 15px;
+    height: 150px;
+    width: 300px;
+    background: linear-gradient(to bottom left,#67c26b, #519fa1 );
+    margin:2em;
+    color: white;
+}
+.box-yellow{  
+    padding: 20px;
+    border-radius: 15px;
+    height: 150px;
+    width: 300px;
+    background: linear-gradient(to bottom left,#a09b32, #9f6476 );
+    margin:2em;
+    color: white;
+}
+.box-red{  
+    padding: 20px;
+    border-radius: 15px;
+    height: 150px;
+    width: 300px;
+    background: linear-gradient(to bottom right,#9d471c, #731393 );
+    margin:2em;
+    color: white;
+}
+.box-white{  
+    padding: 20px;
+    border-radius: 15px;
+    height: 150px;
+    width: 300px;
+    background: linear-gradient(to bottom right,#c9b8b0, #6d397e,rgb(91, 85, 166) );
+    margin:2em;
+    color: white;
+}
+
+footer{
+    height: 70px;
+    background: lightslategray;
+    padding: 20px;
+    color: whitesmoke;
+        }
+        footer a{
+            color:whitesmoke;
+          
+        }
+        .right{
+            float: right;
+        }
